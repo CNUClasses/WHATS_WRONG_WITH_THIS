@@ -16,9 +16,13 @@ Semaphore::~Semaphore() {
 
 void Semaphore::wait() {
 	unique_lock<mutex> mlk(m);
-	count--;
-	while (count < 0)
+	
+	count--;			//what happens if all threads call wait before signal
+	while (count == 0)
 		cv.wait(mlk);
+	
+//	count--; 	//solution, move line 20 here, will only get count down to 0
+	
 }
 void Semaphore::signal() {
 	{
