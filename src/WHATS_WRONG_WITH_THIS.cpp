@@ -5,7 +5,6 @@
 // Copyright   : Your copyright notice
 // Description : Run this code a few times, notice it locks up occasionally?
 //				 Why? What did I do wrong?
-//				 10 points added to project 4 grade for 1st right answer
 //============================================================================
 
 #include <iostream>
